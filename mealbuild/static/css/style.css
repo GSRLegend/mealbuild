@@ -1,0 +1,40 @@
+.bg-index{
+  background: url("/static/img/background.jpg") no-repeat
+    fixed;
+  background-size: 100% auto;
+}
+.navbar a.nav-link {
+  color: #165a08 !important;
+  font-size: 30px;
+}
+.bg-dark {
+  background-color: #2E2E2E !important;
+}
+.ms-footer {
+  background-color: #D0D5ED;
+}
+.ms-footer p {
+  color: #6E632E;
+  font-size: 20px;
+}
+.ms-footer a:hover {
+  color: #6ab43e;
+  text-decoration: none;
+}
+.ms-footer-bottom span{
+  font-size: 13px;
+  line-height: 38px;
+}
+.ms-footer-bottom a {
+  color: #6E632E;
+  text-decoration: underline;
+}
+.ms-footer-bottom a:hover {
+  color: #6ab43e;
+}
+.bg-beige {
+  background-color: #ddd49f !important;
+}
+.footer-title {
+  color: #165a08;
+}
