@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% load custom_filters %}
+<div class="p-3">
+  <div class="container">
+    <div class="row mt-3">
+
+      <!-- Recipe Content -->
+      <div class="col-md-6 mx-auto mb-3">
+        <h2>{{ template_data.recipe.name }}</h2>
+        <hr />
+
+        <img src="{% static 'img/breakfastSourdoughSandwich.jpg' %}" class="card-img-top rounded mb-4">
+        <p class="mb-5"><b>Description:</b> {{ template_data.recipe.description }}</p>
+
+        <!-- Steps -->
+        <p class="text-center mb-4"><b><u>Instructions</u></b></p>
+        {% for key, step in template_data.recipe.steps.items %}
+          <p><b>Step {{ key }}:</b> {{ step }}</p>
+        {% endfor %}
+      </div>
+
+
+      <!-- Nutrition Label -->
+      <div class="col-md-6 d-flex justify-content-center mb-3">
+        <div class="nutrition-label">
+          <h2 class="nutrition-title">Nutrition Facts</h2>
+          <p><strong>Serving Size:</strong> {{ template_data.recipe.serving_size }}</p>
+          <hr class="thick-line">
+          <p><strong>Calories:</strong> {{ template_data.recipe.calories }}</p>
+          <hr>
+
+          <!-- Macros -->
+          <p><strong>Total Fat:</strong> {{ template_data.recipe.macros.fat }}</p>
+          <p><strong>Protein:</strong> {{ template_data.recipe.macros.protein }}</p>
+          <p><strong>Total Carbs:</strong> {{ template_data.recipe.macros.carb }}</p>
+          <p><strong>Cholesterol:</strong> {{ template_data.recipe.macros.cholesterol }}</p>
+          <p><strong>Sodium:</strong> {{ template_data.recipe.macros.sodium }}</p>
+          <hr class="thick-line">
+
+          <!-- Vitamins -->
+          <h5><b>Vitamins</b></h5>
+          <hr />
+          {% for key, value in template_data.recipe.vitamins.items %}
+            {% if value %}
+              <p><b>{{ key|replace_underscore|title }}:</b>{{ value }}</p>
+            {% endif %}
+          {% endfor %}
+          <hr class="thick-line">
+
+          <!-- Minerals -->
+          <h5><b>Minerals</b></h5>
+          <hr />
+          {% for key, value in template_data.recipe.minerals.items %}
+            {% if value %}
+              <p><b>{{ key|replace_underscore|title }}:</b>{{ value }}</p>
+            {% endif %}
+          {% endfor %}
+          <hr class="thick-line">
+
+          <!-- Sugars -->
+          <h5><b>Sugars</b></h5>
+          <hr />
+          {% for key, value in template_data.recipe.sugars.items %}
+            {% if value %}
+              <p><b>{{ key|replace_underscore|title }}:</b>{{ value }}</p>
+            {% endif %}
+          {% endfor %}
+          <hr class="thick-line">
+
+          <!-- Fats -->
+          <h5><b>Fats</b></h5>
+          <hr />
+          {% for key, value in template_data.recipe.fats.items %}
+            {% if value %}
+              <p><b>{{ key|replace_underscore|title }}:</b>{{ value }}</p>
+            {% endif %}
+          {% endfor %}
+          <hr class="thick-line">
+
+          <!-- Fatty Acids -->
+          <h5><b>Fatty Acids</b></h5>
+          <hr />
+          {% for key, value in template_data.recipe.fatty_acids.items %}
+            {% if value %}
+              <p><b>{{ key|replace_underscore|title }}:</b>{{ value }}</p>
+            {% endif %}
+          {% endfor %}
+          <hr class="thick-line">
+
+          <!-- Amino Acids -->
+          <h5><b>Amino Acids</b></h5>
+          <hr />
+          {% for key, value in template_data.recipe.amino_acids.items %}
+            {% if value %}
+              <p><b>{{ key|replace_underscore|title }}:</b>{{ value }}</p>
+            {% endif %}
+          {% endfor %}
+          <hr class="thick-line">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
